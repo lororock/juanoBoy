@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <div class="icon-container">
+      <img class="logo-animado" src="/LogoYugen.gif" />
+    </div>
+    <div class="head-visual">
+      <img src="/HeadVisual.gif" />
+    </div>
+
+    <!-- barra de navegacion  -->
+    <div
+      class="nabvar-visual"
+      style="background-image: url('/line-head.png'); background-size: cover; background-position: center;"
+    >
+      <ul class="navbar">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+              fill="white"></path>
+          </svg>
+        </li>
+        <li>DEBIL</li>
+        <li>VIDA</li>
+        <li>FANTASMA</li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+              fill="white"></path>
+          </svg>
+        </li>
+      </ul>
+    </div>
+
+    <!-- david titulo -->
+    <div class="title-name">
+      <img src="/xDx.webp" />
+    </div>
+
+    <div class="cd-container">
+      <img src="/DebilCD.gif" />
+    </div>
+  </main>
+</Layout> 
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    background-image: url("/fondo.webp");
+    background-size: cover;
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .head-visual {
+    width: 100%;
+  }
+
+  .head-visual img {
+    width: 100%;
+  }
+
+  .nabvar-visual {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .icon-container {
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-animado {
+    width: 300px;
+    height: 300px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar li {
+    display: flex;
+    align-items: center;
+    margin: 2px 15px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .title-name {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cd-container {
+    display: flex;
+    justify-content: center;
+  }
+</style>
