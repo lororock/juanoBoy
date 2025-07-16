@@ -1,5 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
+export const prerender = false;
+
+const API_URL = 'https://ufff-digital.uc.r.appspot.com/api/testimonios/?populate=*';
+const API_TOKEN = 'Bearer db0afe4b84307d9d3d38e010c8efc8d12037dba4f3b5c75d06f15a7a01da6e0f51f762c125c8b6fb1a9e185fa0ac14793e25710c09c54221fbeab58f0f2a9fcac8c3866fb40a3eb407adcd04aa65195469ec8641c1cdb3f00b550f6db845b52dca808d2621301a925edabe4a68e82aa22c1135a98491e12c755aa006a266ae8f';
+
+interface Testimonio {
+  negocio: string;
+  comentario: string;
+  imagen: string;
+  autor: string;
+  rating: number;
+}
+
+let testimonios: Testimonio[] = [];
+
+try {
+  const res = await fetch(API_URL, { headers: { Authorization: API_TOKEN } });
+  const { data = [] } = await res.json();
+  testimonios = data.map((item: any) => {
+    const attr = item.attributes ?? item;
+    const imagenObj = attr.imagen ?? attr.imagen_local ?? {};
+    const imagenUrl = imagenObj.url || imagenObj.data?.attributes?.url || '';
+    return {
+      negocio: attr.negocio ?? attr.titulo ?? 'Cliente',
+      comentario: attr.comentario ?? attr.testimonio ?? '',
+      imagen: imagenUrl,
+      autor: attr.autor ?? attr.nombre ?? 'Cliente',
+      rating: attr.calificacion ?? 5,
+    } as Testimonio;
+  });
+} catch (err) {
+  console.error('Error fetching testimonios', err);
+}
 ---
 
 <Layout title="Welcome to Astro.">
@@ -54,7 +87,15 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div class="flex justify-center">
-      <img src="/DebilCD.gif" />
+      <img class="w-1/2 h-1/2" src="/DebilCD.gif" />
+      {testimonios.map((testimonio) => (
+        <div>
+          <img src={testimonio.imagen} alt={testimonio.autor} />
+          <p>{testimonio.comentario}</p>
+          <p>{testimonio.autor}</p>
+          <p>{testimonio.rating}</p>
+        </div>
+      ))}
     </div>
   </main>
 </Layout> 
