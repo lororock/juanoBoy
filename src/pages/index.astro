@@ -3,20 +3,17 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <div class="icon-container">
-      <img class="logo-animado" src="/LogoYugen.gif" />
+  <main class="bg-cover text-white flex flex-col items-center" style="background-image: url('/fondo.webp')">
+    <div class="py-12 flex justify-center">
+      <img class="w-72 h-72" src="/LogoYugen.gif" />
     </div>
-    <div class="head-visual">
-      <img src="/HeadVisual.gif" />
+    <div class="w-full">
+      <img class="w-full" src="/HeadVisual.gif" />
     </div>
 
     <!-- barra de navegacion  -->
-    <div
-      class="nabvar-visual"
-      style="background-image: url('/line-head.png'); background-size: cover; background-position: center;"
-    >
-      <ul class="navbar">
+    <div class="w-full mt-12 bg-cover bg-no-repeat bg-center" style="background-image: url('/line-head.png')">
+      <ul class="flex justify-center items-center list-none p-0 m-0">
         <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +28,9 @@ import Layout from "../layouts/Layout.astro";
               fill="white"></path>
           </svg>
         </li>
-        <li>DEBIL</li>
-        <li>VIDA</li>
-        <li>FANTASMA</li>
+        <li class="mx-4 text-2xl font-bold">DEBIL</li>
+        <li class="mx-4 text-2xl font-bold">VIDA</li>
+        <li class="mx-4 text-2xl font-bold">FANTASMA</li>
         <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,79 +49,12 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <!-- david titulo -->
-    <div class="title-name">
+    <div class="mt-12 flex justify-center">
       <img src="/xDx.webp" />
     </div>
 
-    <div class="cd-container">
+    <div class="flex justify-center">
       <img src="/DebilCD.gif" />
     </div>
   </main>
 </Layout> 
-
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  main {
-    background-image: url("/fondo.webp");
-    background-size: cover;
-    color: white;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .head-visual {
-    width: 100%;
-  }
-
-  .head-visual img {
-    width: 100%;
-  }
-
-  .nabvar-visual {
-    margin-top: 50px;
-    width: 100%;
-  }
-
-  .icon-container {
-    padding: 50px 0px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo-animado {
-    width: 300px;
-    height: 300px;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .navbar li {
-    display: flex;
-    align-items: center;
-    margin: 2px 15px;
-    font-size: 30px;
-    font-weight: bold;
-  }
-
-  .title-name {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .cd-container {
-    display: flex;
-    justify-content: center;
-  }
-</style>

@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 interface Props {
 	title: string;
 }
@@ -18,8 +20,4 @@ interface Props {
 		<slot />
 	</body>
 </html>
-<style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-	}
-</style>
+<!-- Global styles now handled by Tailwind -->
